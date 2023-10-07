@@ -1,0 +1,28 @@
+.landing-card {
+  display: flex;
+  width: 450px;
+  height: 520px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-name,
+.product-price {
+  margin: 0;
+}
+
+.product-name {
+  font-size: 25px;
+}
+
+.product-price {
+  font-size: 18px;
+}

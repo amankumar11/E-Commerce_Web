@@ -1,0 +1,28 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+.navbar {
+  width: 90%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+
+.navbar-items {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.navbar-profile-items {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+}
