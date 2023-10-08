@@ -1,14 +1,12 @@
 import React from "react";
 import "../assets/css/landingPage.css";
-import Navbar from "../components/Navbar";
 import landingBanner from "../assets/img/landing_banner.webp";
-import LandingCard from "../components/LandingCard";
+import LandingCard from "../components/ItemCard";
 import sofagrey from "../assets/img/products/sofa-grey.webp";
 
 const Landing = () => {
   return (
     <div>
-      <Navbar />
       <div className="landing">
         <img src={landingBanner} alt="landingBanner" width="100%"></img>
       </div>
@@ -19,16 +17,25 @@ const Landing = () => {
             productName="Grey Sofa"
             price="₹20,000"
             imageUrl={sofagrey}
+            height="520px"
+            width="450px"
+            imgHeight="400px"
           />
           <LandingCard
             productName="Grey Sofa"
             price="₹20,000"
             imageUrl={sofagrey}
+            height="520px"
+            width="450px"
+            imgHeight="400px"
           />
           <LandingCard
             productName="Grey Sofa"
             price="₹20,000"
             imageUrl={sofagrey}
+            height="520px"
+            width="450px"
+            imgHeight="400px"
           />
         </div>
         <button className="seeall-btn">See All</button>
@@ -40,16 +47,25 @@ const Landing = () => {
             productName="Grey Sofa"
             price="₹20,000"
             imageUrl={sofagrey}
+            height="520px"
+            width="450px"
+            imgHeight="400px"
           />
           <LandingCard
             productName="Grey Sofa"
             price="₹20,000"
             imageUrl={sofagrey}
+            height="520px"
+            width="450px"
+            imgHeight="400px"
           />
           <LandingCard
             productName="Grey Sofa"
             price="₹20,000"
             imageUrl={sofagrey}
+            height="520px"
+            width="450px"
+            imgHeight="400px"
           />
         </div>
         <button className="seeall-btn">See All</button>

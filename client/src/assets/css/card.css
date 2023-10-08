@@ -1,7 +1,5 @@
 .landing-card {
   display: flex;
-  width: 450px;
-  height: 520px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

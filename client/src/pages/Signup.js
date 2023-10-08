@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
+import "../assets/css/login.css";
+import loginImg from "../assets/img/login.jpg";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -13,25 +15,45 @@ const Signup = () => {
   };
 
   return (
-    <form className="signup" onSubmit={handleSubmit}>
-      <h3>Sign Up</h3>
+    <div className="login-page">
+      <div className="login-card">
+        <div className="login-left">
+          <h1>Welcome</h1>
+          <form className="login-form" onSubmit={handleSubmit}>
+            {/* <label>Email address:</label> */}
+            <input
+              type="email"
+              placeholder="Email Id"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+            {/* <label>Password:</label> */}
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
 
-      <label>Email address:</label>
-      <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      <label>Password:</label>
-      <input
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-      />
-
-      <button disabled={isLoading}>Sign up</button>
-      {error && <div className="error">{error}</div>}
-    </form>
+            <button disabled={isLoading} className="login-btn">
+              Sign Up
+            </button>
+            {error && <div className="error">{error}</div>}
+          </form>
+          <a className="signup-btn" href="/login">
+            Already have a Account
+          </a>
+        </div>
+        <div className="login-right">
+          <img
+            src={loginImg}
+            width="600px"
+            alt="login-img"
+            className="login-img"
+          ></img>
+        </div>
+      </div>
+    </div>
   );
 };
 

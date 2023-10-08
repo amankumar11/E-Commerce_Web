@@ -1,0 +1,22 @@
+.shop-div {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+}
+
+.shop-left {
+  display: flex;
+  background-color: #f4f4f4;
+  width: 20%;
+}
+
+.shop-right {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.shop-row {
+  display: flex;
+}
