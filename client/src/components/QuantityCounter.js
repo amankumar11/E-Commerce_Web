@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../assets/css/cartcard.css";
 
 const QuantityCounter = () => {
   const [count, setCount] = useState(1);
@@ -14,10 +15,14 @@ const QuantityCounter = () => {
   };
 
   return (
-    <div>
-      <button onClick={decreaseCount}>-</button>
-      <span>{count}</span>
-      <button onClick={increaseCount}>+</button>
+    <div className="quant-counter">
+      <button onClick={decreaseCount} className="count-btn decrease">
+        -
+      </button>
+      <span className="count">{count}</span>
+      <button onClick={increaseCount} className="count-btn increase">
+        +
+      </button>
     </div>
   );
 };
