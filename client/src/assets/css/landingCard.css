@@ -26,3 +26,19 @@
 .product-price {
   font-size: 18px;
 }
+
+.cart-btn {
+  height: 45px;
+  width: 100px;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.cart-btn:hover {
+  background-color: red;
+  color: white;
+  border: none;
+}

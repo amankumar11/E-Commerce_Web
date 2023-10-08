@@ -8,7 +8,7 @@ const LandingCard = ({ productName, imageUrl, price }) => {
       <div className="product-details">
         <p className="product-name">{productName}</p>
         <p className="product-price">{price}</p>
-        <button>Add to cart</button>
+        <button className="cart-btn">Add to cart</button>
       </div>
     </div>
   );
