@@ -7,15 +7,15 @@ const ItemSchema = new Schema({
   itemType: { type: String, required: true },
   description: { type: String },
   price: {
-    type: Number,
-    min: [1, "wrong min price"],
-    max: [1000000, "wrong max price"],
+    type: String,
+    required: true,
   },
   discountPercentage: {
     type: Number,
     min: [1, "wrong min discount"],
     max: [99, "wrong max discount"],
   },
+  images: { type: String, required: true },
   rating: {
     type: Number,
     min: [0, "wrong min rating"],
@@ -24,4 +24,4 @@ const ItemSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Item", ItemSchema);

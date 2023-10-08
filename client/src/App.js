@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
+import Cart from "./pages/Cart";
 
 function App() {
   const { user } = useAuthContext();
@@ -30,6 +31,7 @@ function App() {
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
             {user && <Route path="/shop" element={<Shop />} />}
+            {user && <Route path="/cart" element={<Cart />} />}
           </Routes>
         </div>
       </BrowserRouter>
