@@ -2,13 +2,9 @@ import React from "react";
 import QuantityCounter from "./QuantityCounter";
 import "../assets/css/cartcard.css";
 
-const CartCard = ({ itemName, price, imageUrl, onDelete }) => {
-  const userData = localStorage.getItem("user");
-  const user = JSON.parse(userData);
-  const userEmail = user ? user.email : "";
-
+const CartCard = ({ id, itemName, price, imageUrl, onDelete }) => {
   const handleDeleteClick = () => {
-    onDelete(userEmail, itemName);
+    onDelete(id);
   };
 
   return (

@@ -12,6 +12,6 @@ router.post("/add", addToCart);
 
 router.get("/", getCart);
 
-router.delete("/:userEmail/:productName", deleteCartItem);
+router.delete("/:_id", deleteCartItem);
 
 module.exports = router;

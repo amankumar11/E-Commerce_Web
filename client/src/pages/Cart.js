@@ -24,15 +24,12 @@ const Cart = () => {
       });
   }, [userEmail]);
 
-  const handleDeleteItem = async (userEmail, productName) => {
+  const handleDeleteItem = async (_id) => {
     try {
-      await axios.delete(`/api/cart/${userEmail}/${productName}`);
+      await axios.delete(`/api/cart/${_id}`);
 
       setCartItems((prevCartItems) =>
-        prevCartItems.filter(
-          (item) =>
-            item.productName !== productName || item.userEmail !== userEmail
-        )
+        prevCartItems.filter((item) => item._id !== _id)
       );
     } catch (error) {
       console.error("Error deleting item:", error);
@@ -46,6 +43,7 @@ const Cart = () => {
           <h1>Your Bag</h1>
           {cartItems.map((item) => (
             <CartCard
+              id={item._id}
               itemName={item.productName}
               price={item.price}
               imageUrl={item.images}

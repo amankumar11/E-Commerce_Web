@@ -7,7 +7,7 @@ const ItemSchema = new Schema({
   itemType: { type: String, required: true },
   description: { type: String },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   discountPercentage: {

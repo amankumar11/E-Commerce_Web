@@ -53,7 +53,7 @@ const LandingCard = ({
       <img src={imageUrl} alt={productName} style={imgStyle} />
       <div className="product-details">
         <p className="product-name">{productName}</p>
-        <p className="product-price">{price}</p>
+        <p className="product-price">₹{price}</p>
         <button className="cart-btn" onClick={handleAddToCart}>
           Add to cart
         </button>

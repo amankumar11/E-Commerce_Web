@@ -10,7 +10,7 @@ const cartSchema = new Schema({
   itemType: { type: String, required: true },
   quantity: { type: Number, required: true },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   discountPercentage: {

@@ -1,5 +1,4 @@
 const Cart = require("../models/cart");
-// const mongoose = require("mongoose");
 
 const addToCart = async (req, res) => {
   try {
@@ -57,11 +56,10 @@ const getCart = async (req, res) => {
 
 const deleteCartItem = async (req, res) => {
   try {
-    const { userEmail, productName } = req.params;
+    const { _id } = req.params;
 
     const deletedItem = await Cart.findOneAndRemove({
-      userEmail,
-      productName,
+      _id,
     });
 
     if (!deletedItem) {
@@ -75,4 +73,39 @@ const deleteCartItem = async (req, res) => {
   }
 };
 
-module.exports = { addToCart, getCart, deleteCartItem, deleteCartItem };
+const updateCartItemQuantity = async (req, res) => {
+  const { cartItemId, newQuantity } = req.body;
+
+  try {
+    const cartItem = await Cart.findById(cartItemId);
+
+    if (!cartItem) {
+      return res.status(404).json({ message: "Cart item not found" });
+    }
+
+    if (
+      typeof newQuantity !== "number" ||
+      newQuantity < 1 ||
+      !Number.isInteger(newQuantity)
+    ) {
+      return res.status(400).json({ message: "Invalid quantity" });
+    }
+    cartItem.quantity = newQuantity;
+    await cartItem.save();
+
+    return res
+      .status(200)
+      .json({ message: "Cart item quantity updated successfully", cartItem });
+  } catch (error) {
+    console.error("Error updating cart item quantity:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+module.exports = {
+  addToCart,
+  getCart,
+  deleteCartItem,
+  deleteCartItem,
+  updateCartItemQuantity,
+};

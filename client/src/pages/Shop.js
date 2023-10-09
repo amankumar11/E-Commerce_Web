@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import LandingCard from "../components/ItemCard";
-import sofagrey from "../assets/img/products/sofa-grey.webp";
 import "../assets/css/shop.css";
 
 const Shop = () => {
@@ -40,13 +39,11 @@ const Shop = () => {
             price={item.price}
             imageUrl={item.images}
             itemType={item.itemType}
-            // Assuming you want the first image from the array
           />
         ))}
       </div>
     );
 
-    // Check the type and push to the appropriate array
     if (rowItems.length > 0) {
       if (rowItems[0].itemType === "product") {
         productRows.push(row);
