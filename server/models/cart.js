@@ -21,16 +21,4 @@ const cartSchema = new Schema({
   images: { type: String, required: true },
 });
 
-// const virtual = cartSchema.virtual("id");
-// virtual.get(function () {
-//   return this._id;
-// });
-// cartSchema.set("toJSON", {
-//   virtuals: true,
-//   versionKey: false,
-//   transform: function (doc, ret) {
-//     delete ret._id;
-//   },
-// });
-
 module.exports = mongoose.model("Cart", cartSchema);

@@ -42,17 +42,17 @@ const addToCart = async (req, res) => {
   }
 };
 
-// const getCart = async (req, res) => {
-//   try {
-//     const { email } = req.params;
+const getCart = async (req, res) => {
+  try {
+    const { email } = req.params;
 
-//     const userCart = await Cart.find({ email });
+    const userCart = await Cart.find({ email });
 
-//     res.status(200).json({ cart: userCart });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal server error" });
-//   }
-// };
+    res.status(200).json({ cart: userCart });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
 
-module.exports = { addToCart };
+module.exports = { addToCart, getCart };

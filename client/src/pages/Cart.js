@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CartCard from "../components/CartCard";
 import "../assets/css/cart.css";
+import axios from "axios";
 
 const Cart = () => {
+  const [cartItems, setCartItems] = useState([]);
+
+  const userData = localStorage.getItem("user");
+  const user = JSON.parse(userData);
+  const userEmail = user ? user.email : "";
+
+  useEffect(() => {
+    axios
+      .get("/api/cart")
+      .then((response) => {
+        const filteredCartItems = response.data.cart.filter(
+          (item) => item.userEmail === userEmail
+        );
+        setCartItems(filteredCartItems);
+      })
+      .catch((error) => {
+        console.error("Error fetching cart items:", error);
+      });
+  }, [userEmail]);
+
   return (
     <div className="cart-page">
       <div className="cart-container">
         <div className="cart-left">
           <h1>Your Bag</h1>
-          <CartCard />
-          <CartCard />
-          <CartCard />
+          {cartItems.map((item) => (
+            <CartCard
+              itemName={item.productName}
+              price={item.price}
+              imageUrl={item.images}
+            />
+          ))}
         </div>
         <div className="cart-right">
           <div className="checkout-card">
