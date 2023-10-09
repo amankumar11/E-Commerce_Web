@@ -1,19 +1,37 @@
 .shop-div {
   display: flex;
   justify-content: center;
-  height: 90vh;
+  height: auto;
   width: 100%;
 }
 
 .shop-left {
   display: flex;
   flex-direction: column;
-  background-color: #f4f4f4;
+  background-color: #f4f4f42b;
+  border-right: 3px solid rgba(0, 0, 0, 0.122);
   width: 20%;
+}
+
+.left-heading {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.left-subheading {
+  font-size: 16px;
+}
+
+.radio-btn {
+  width: 20px;
+  height: 15px;
+  accent-color: var(--product-red);
 }
 
 .shop-left-items {
   margin-left: 25px;
+  width: 90%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.412);
 }
 
 .shop-right {
@@ -21,6 +39,12 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
+}
+
+.shop-right h1 {
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--product-red);
 }
 
 .shop-row {

@@ -5,6 +5,12 @@
   justify-content: center;
 }
 
+.landing-card:hover {
+  background-color: #db44440b;
+  border: 2px solid #db444422;
+  border-radius: 5px;
+}
+
 .item-fav-div {
   display: flex;
   margin-top: 5px;
