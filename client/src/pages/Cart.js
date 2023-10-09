@@ -36,6 +36,25 @@ const Cart = () => {
     }
   };
 
+  const updateQuantity = (ItemId, newQuantity) => {
+    const updatedProducts = cartItems.map((product) => {
+      if (product._id === ItemId) {
+        return { ...product, quantity: newQuantity };
+      }
+      return product;
+    });
+    setCartItems(updatedProducts);
+
+    axios
+      .patch(`/api/cart/${ItemId}/update`, { ItemId, newQuantity })
+      .then((response) => {
+        console.log("Cart item quantity updated successfully:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error updating cart item quantity:", error);
+      });
+  };
+
   return (
     <div className="cart-page">
       <div className="cart-container">
@@ -45,9 +64,12 @@ const Cart = () => {
             <CartCard
               id={item._id}
               itemName={item.productName}
+              itemType={item.itemType}
               price={item.price}
+              quantity={item.quantity}
               imageUrl={item.images}
               onDelete={handleDeleteItem}
+              onQuantityUpdate={updateQuantity}
             />
           ))}
         </div>

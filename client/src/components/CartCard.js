@@ -2,9 +2,26 @@ import React from "react";
 import QuantityCounter from "./QuantityCounter";
 import "../assets/css/cartcard.css";
 
-const CartCard = ({ id, itemName, price, imageUrl, onDelete }) => {
+const CartCard = ({
+  id,
+  itemName,
+  itemType,
+  price,
+  quantity,
+  imageUrl,
+  onDelete,
+  onQuantityUpdate,
+}) => {
   const handleDeleteClick = () => {
     onDelete(id);
+  };
+
+  const handleIncrease = () => {
+    onQuantityUpdate(id, quantity + 1);
+  };
+
+  const handleDecrease = () => {
+    onQuantityUpdate(id, quantity - 1);
   };
 
   return (
@@ -15,8 +32,13 @@ const CartCard = ({ id, itemName, price, imageUrl, onDelete }) => {
         </div>
         <div className="cart-card-right">
           <p className="item-name">{itemName}</p>
-          <QuantityCounter />
-          <p className="item-price">{price}</p>
+          <p className="item-type">{itemType}</p>
+          <QuantityCounter
+            quantity={quantity}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+          />
+          <p className="item-price">₹{price}</p>
           <button className="delete-btn" onClick={handleDeleteClick}>
             Delete
           </button>

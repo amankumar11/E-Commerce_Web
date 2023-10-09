@@ -22,6 +22,16 @@ const ItemSchema = new Schema({
     max: [5, "wrong max price"],
     default: 0,
   },
+  taxes: [
+    {
+      taxType: { type: String, required: true },
+      taxAmount: { type: Number, required: true },
+    },
+  ],
+  totalAmount: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model("Item", ItemSchema);

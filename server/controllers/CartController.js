@@ -74,10 +74,10 @@ const deleteCartItem = async (req, res) => {
 };
 
 const updateCartItemQuantity = async (req, res) => {
-  const { cartItemId, newQuantity } = req.body;
+  const { _id, newQuantity } = req.body;
 
   try {
-    const cartItem = await Cart.findById(cartItemId);
+    const cartItem = await Cart.findById({ _id });
 
     if (!cartItem) {
       return res.status(404).json({ message: "Cart item not found" });
