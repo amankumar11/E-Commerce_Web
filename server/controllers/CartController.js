@@ -55,4 +55,24 @@ const getCart = async (req, res) => {
   }
 };
 
-module.exports = { addToCart, getCart };
+const deleteCartItem = async (req, res) => {
+  try {
+    const { userEmail, productName } = req.params;
+
+    const deletedItem = await Cart.findOneAndRemove({
+      userEmail,
+      productName,
+    });
+
+    if (!deletedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    res.status(200).json({ message: "Item deleted successfully", deletedItem });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+module.exports = { addToCart, getCart, deleteCartItem, deleteCartItem };

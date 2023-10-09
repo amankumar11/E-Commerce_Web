@@ -24,6 +24,21 @@ const Cart = () => {
       });
   }, [userEmail]);
 
+  const handleDeleteItem = async (userEmail, productName) => {
+    try {
+      await axios.delete(`/api/cart/${userEmail}/${productName}`);
+
+      setCartItems((prevCartItems) =>
+        prevCartItems.filter(
+          (item) =>
+            item.productName !== productName || item.userEmail !== userEmail
+        )
+      );
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    }
+  };
+
   return (
     <div className="cart-page">
       <div className="cart-container">
@@ -34,6 +49,7 @@ const Cart = () => {
               itemName={item.productName}
               price={item.price}
               imageUrl={item.images}
+              onDelete={handleDeleteItem}
             />
           ))}
         </div>
