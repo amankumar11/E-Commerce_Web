@@ -38,7 +38,9 @@ const Shop = () => {
             key={item.id}
             productName={item.title}
             price={item.price}
-            imageUrl={item.images} // Assuming you want the first image from the array
+            imageUrl={item.images}
+            itemType={item.itemType}
+            // Assuming you want the first image from the array
           />
         ))}
       </div>
