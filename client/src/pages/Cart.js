@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CartCard from "../components/CartCard";
 import "../assets/css/cart.css";
 import axios from "axios";
+import ItemAmountCard from "../components/ItemAmountCard";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -75,15 +76,9 @@ const Cart = () => {
         </div>
         <div className="cart-right">
           <div className="checkout-card">
-            <div className="amount-box">
-              <h2>Amount Payable</h2>
-              <h2>Amount</h2>
-            </div>
-            <div className="amount-box">
-              <h2>Tax SA</h2>
-              <h2>Amount</h2>
-            </div>
-            <div className="amount-box total-box">
+            <h2>Amount Payable</h2>
+            <ItemAmountCard />
+            <div className="total-box">
               <h2>Total</h2>
               <h2>Amount</h2>
             </div>

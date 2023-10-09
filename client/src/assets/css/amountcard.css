@@ -1,0 +1,15 @@
+.amount-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.614);
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.amount-box {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+}
