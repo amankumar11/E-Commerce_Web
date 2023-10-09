@@ -10,6 +10,8 @@ const LandingCard = ({
   width,
   imgHeight,
   itemType,
+  taxes,
+  totalAmount,
 }) => {
   const cardStyle = {
     height: height || "550px",
@@ -31,6 +33,8 @@ const LandingCard = ({
     quantity: 1,
     price: price,
     images: imageUrl,
+    taxes: taxes,
+    totalAmount: totalAmount,
   });
 
   const handleAddToCart = async () => {

@@ -56,6 +56,10 @@ const Cart = () => {
       });
   };
 
+  const totalAmount = cartItems.reduce((total, item) => {
+    return total + item.totalAmount * item.quantity;
+  }, 0);
+
   return (
     <div className="cart-page">
       <div className="cart-container">
@@ -77,10 +81,20 @@ const Cart = () => {
         <div className="cart-right">
           <div className="checkout-card">
             <h2>Amount Payable</h2>
-            <ItemAmountCard />
+            {cartItems.map((item) => (
+              <ItemAmountCard
+                itemName={item.productName}
+                price={item.price}
+                taxes={item.taxes}
+                itemType={item.itemType}
+                totalAmount={item.totalAmount}
+                quantity={item.quantity}
+              />
+            ))}
+            {/* <ItemAmountCard /> */}
             <div className="total-box">
               <h2>Total</h2>
-              <h2>Amount</h2>
+              <h2>{totalAmount.toFixed(2)}</h2>
             </div>
             <button className="checkout-btn">Proceed to Checkout</button>
           </div>

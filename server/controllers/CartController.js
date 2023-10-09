@@ -10,6 +10,8 @@ const addToCart = async (req, res) => {
       price,
       discountPercentage,
       images,
+      taxes,
+      totalAmount,
     } = req.body;
 
     let cartItem = await Cart.findOne({ userEmail, productName });
@@ -25,6 +27,8 @@ const addToCart = async (req, res) => {
         price,
         discountPercentage,
         images,
+        taxes,
+        totalAmount,
       });
     }
 

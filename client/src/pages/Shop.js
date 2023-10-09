@@ -39,6 +39,8 @@ const Shop = () => {
             price={item.price}
             imageUrl={item.images}
             itemType={item.itemType}
+            taxes={item.taxes}
+            totalAmount={item.totalAmount}
           />
         ))}
       </div>

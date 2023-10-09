@@ -19,6 +19,16 @@ const cartSchema = new Schema({
     max: [99, "wrong max discount"],
   },
   images: { type: String, required: true },
+  taxes: [
+    {
+      taxType: { type: String, required: true },
+      taxAmount: { type: Number, required: true },
+    },
+  ],
+  totalAmount: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model("Cart", cartSchema);
