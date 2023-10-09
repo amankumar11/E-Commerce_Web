@@ -21,6 +21,17 @@
   width: 25%;
 }
 
+.logout-btn {
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
 .navbar-profile-items {
   display: flex;
   justify-content: space-between;

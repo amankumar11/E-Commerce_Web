@@ -57,7 +57,11 @@ const Cart = () => {
   };
 
   const totalAmount = cartItems.reduce((total, item) => {
-    return total + item.totalAmount * item.quantity;
+    if (item.itemType === "product") {
+      return total + 200 + item.totalAmount * item.quantity;
+    } else {
+      return total + 100 + item.totalAmount * item.quantity;
+    }
   }, 0);
 
   return (
@@ -65,6 +69,14 @@ const Cart = () => {
       <div className="cart-container">
         <div className="cart-left">
           <h1>Your Bag</h1>
+          {cartItems.length === 0 ? (
+            <div className="empty-cart">
+              <h3>Hey, it feels so light!</h3>
+              <p>There is nothing in your bag. Let's add some items</p>
+            </div>
+          ) : (
+            <div></div>
+          )}
           {cartItems.map((item) => (
             <CartCard
               id={item._id}
@@ -77,6 +89,9 @@ const Cart = () => {
               onQuantityUpdate={updateQuantity}
             />
           ))}
+          <a className="return-shop-btn" href="/shop">
+            Return to Shop
+          </a>
         </div>
         <div className="cart-right">
           <div className="checkout-card">

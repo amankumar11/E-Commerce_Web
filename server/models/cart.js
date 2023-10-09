@@ -21,8 +21,8 @@ const cartSchema = new Schema({
   images: { type: String, required: true },
   taxes: [
     {
-      taxType: { type: String, required: true },
-      taxAmount: { type: Number, required: true },
+      taxType: { type: String },
+      taxAmount: { type: Number },
     },
   ],
   totalAmount: {

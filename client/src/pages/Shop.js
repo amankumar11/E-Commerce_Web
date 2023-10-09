@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LandingCard from "../components/ItemCard";
 import "../assets/css/shop.css";
+import { getItemData } from "../api/getItem";
 
 const Shop = () => {
   const [selectedOption, setSelectedOption] = useState("Products");
@@ -8,14 +9,7 @@ const Shop = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("/api/item")
-      .then((response) => response.json())
-      .then((data) => {
-        setItems(data.items);
-      })
-      .catch((error) => {
-        console.error("Error fetching items:", error);
-      });
+    getItemData(setItems);
   }, []);
 
   const handleOptionChange = (option) => {

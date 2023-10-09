@@ -24,8 +24,8 @@ const ItemSchema = new Schema({
   },
   taxes: [
     {
-      taxType: { type: String, required: true },
-      taxAmount: { type: Number, required: true },
+      taxType: { type: String },
+      taxAmount: { type: Number },
     },
   ],
   totalAmount: {

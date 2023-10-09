@@ -1,3 +1,38 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  align-items: center;
+}
+
+.landing {
+  width: 100%;
+}
+
+.mini-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  margin-top: 0;
+}
+.items-landing {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.31);
+  padding-bottom: 25px;
+}
+
+.items-landing h1 {
+  font-weight: 500;
+  font-size: 40px;
+}
+
 .card-layout {
   display: flex;
   width: 100%;
@@ -13,10 +48,24 @@
   border: 1px solid black;
   font-size: 18px;
   border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .seeall-btn:hover {
-  background-color: red;
+  background-color: var(--product-red);
   color: white;
   border: none;
+}
+
+.enter-shop-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: var(--product-red);
+  text-decoration: none;
+  color: white;
+  width: 200px;
+  height: 70px;
 }

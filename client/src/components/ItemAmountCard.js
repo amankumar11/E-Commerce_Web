@@ -36,7 +36,11 @@ const ItemAmountCard = ({
         </div>
       )}
       <div className="item-total">
-        <h3>{totalAmount * quantity}</h3>
+        {itemType === "product" ? (
+          <h3>{200 + totalAmount * quantity}</h3>
+        ) : (
+          <h3>{100 + totalAmount * quantity}</h3>
+        )}
       </div>
     </div>
   );

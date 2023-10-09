@@ -26,25 +26,28 @@
 .item-name {
   font-weight: 600;
   font-size: 25px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   margin-top: 10px;
+  color: var(--product-red);
 }
 
 .item-type {
-  font-size: 15px;
-  margin-top: 0;
+  font-size: 12px;
+  margin-top: 0px;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .item-price {
   font-size: 18px;
   margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .delete-btn {
   background-color: white;
-  color: red;
-  border: 1px solid rgba(255, 0, 0, 0.577);
+  color: var(--product-red);
+  border: 1px solid var(--product-red);
   font-size: 15px;
   border-radius: 5px;
   height: 35px;
@@ -52,7 +55,7 @@
 }
 
 .delete-btn:hover {
-  background-color: rgba(255, 0, 0, 0.723);
+  background-color: var(--product-red);
   color: white;
 }
 
