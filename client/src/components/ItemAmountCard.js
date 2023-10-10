@@ -18,12 +18,15 @@ const ItemAmountCard = ({
         <p>{price}</p>
       </div>
 
-      {taxes.map((tax) => (
-        <div className="amount-box">
-          <p>Tax-{tax.taxType}</p>
-          <p>{tax.taxAmount}</p>
-        </div>
-      ))}
+      {taxes.map(
+        (tax) =>
+          tax.taxType !== "" && (
+            <div className="amount-box">
+              <p>Tax-{tax.taxType}</p>
+              <p>{tax.taxAmount}</p>
+            </div>
+          )
+      )}
       {itemType === "product" ? (
         <div className="amount-box">
           <p>Tax-PC</p>

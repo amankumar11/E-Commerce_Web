@@ -21,7 +21,9 @@ const CartCard = ({
   };
 
   const handleDecrease = () => {
-    onQuantityUpdate(id, quantity - 1);
+    if (quantity > 1) {
+      onQuantityUpdate(id, quantity - 1);
+    }
   };
 
   return (

@@ -79,23 +79,11 @@ const Shop = () => {
           <div className="shop-left-items">
             <h3 className="left-heading">Sort</h3>
             <p className="left-subheading">
-              <input
-                type="radio"
-                className="radio-btn"
-                value="Products"
-                checked={selectedOption === "Products"}
-                // onChange={() => handleOptionChange("Products")}
-              />
+              <input type="radio" className="radio-btn" value="" />
               Price - low to high
             </p>
             <p className="left-subheading">
-              <input
-                type="radio"
-                className="radio-btn"
-                value="Services"
-                checked={selectedOption === "Services"}
-                // onChange={() => handleOptionChange("Services")}
-              />
+              <input type="radio" className="radio-btn" value="" />
               Price - high to low
             </p>
           </div>

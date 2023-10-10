@@ -21,8 +21,8 @@ const Navbar = () => {
         <div className="navbar">
           <div className="navbar-items">
             <img src={Logo} alt="Logo" width="30%"></img>
-            <a>Products</a>
-            <a>Services</a>
+            {/* <a>Products</a> */}
+            {/* <a>Services</a> */}
           </div>
           <div className="navbar-profile-items">
             <a href="/cart">

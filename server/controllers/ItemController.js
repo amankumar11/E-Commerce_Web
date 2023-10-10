@@ -22,8 +22,10 @@ const addItem = async (req, res) => {
       } else if (price > 5000) {
         taxType = "PB";
         taxAmount = price * 0.18;
+      } else {
+        taxType = "";
+        taxAmount = 0;
       }
-      taxAmount = taxAmount + 200;
     } else if (itemType === "service") {
       if (price > 1000 && price <= 8000) {
         taxType = "SA";
@@ -31,8 +33,10 @@ const addItem = async (req, res) => {
       } else if (price > 8000) {
         taxType = "SB";
         taxAmount = price * 0.15;
+      } else {
+        taxType = "";
+        taxAmount = 0;
       }
-      taxAmount = taxAmount + 100;
     }
 
     const newItem = new Item({
