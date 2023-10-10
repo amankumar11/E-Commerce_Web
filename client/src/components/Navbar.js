@@ -8,6 +8,10 @@ const Navbar = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
+  const userData = localStorage.getItem("user");
+  const usercheck = JSON.parse(userData);
+  const userEmail = user ? usercheck.email : "";
+
   const handleClick = () => {
     logout();
   };
@@ -28,6 +32,11 @@ const Navbar = () => {
                 alt="cart"
               ></img>
             </a>
+            {userEmail === "admin@gmail.com" && (
+              <a className="admin-btn" href="/admin">
+                Admin
+              </a>
+            )}
             <button onClick={handleClick} className="logout-btn">
               Logout
             </button>

@@ -37,3 +37,15 @@
   justify-content: space-between;
   width: 10%;
 }
+
+.admin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+}
