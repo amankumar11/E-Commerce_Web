@@ -42,7 +42,7 @@
 
 .cart-btn {
   height: 40px;
-  width: 100px;
+  width: 120px;
   background-color: white;
   color: black;
   border: 1px solid black;
@@ -50,6 +50,12 @@
   font-size: 16px;
   margin-top: 10px;
   transition: background-color 0.6s ease, color 0.6s ease, border 0.6s ease;
+}
+
+.added {
+  background-color: green;
+  border: none;
+  color: white;
 }
 
 .cart-btn:hover {

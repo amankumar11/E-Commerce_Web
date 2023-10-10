@@ -3,27 +3,21 @@ import CartCard from "../components/CartCard";
 import "../assets/css/cart.css";
 import axios from "axios";
 import ItemAmountCard from "../components/ItemAmountCard";
+import fetchCart from "../api/fetchCart";
+import FetchTotalAmount from "../api/fetchTotalAmount";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  const userData = localStorage.getItem("user");
-  const user = JSON.parse(userData);
-  const userEmail = user ? user.email : "";
-
   useEffect(() => {
-    axios
-      .get("/api/cart")
-      .then((response) => {
-        const filteredCartItems = response.data.cart.filter(
-          (item) => item.userEmail === userEmail
-        );
+    fetchCart()
+      .then((filteredCartItems) => {
         setCartItems(filteredCartItems);
       })
       .catch((error) => {
         console.error("Error fetching cart items:", error);
       });
-  }, [userEmail]);
+  }, []);
 
   const handleDeleteItem = async (_id) => {
     try {
@@ -56,13 +50,7 @@ const Cart = () => {
       });
   };
 
-  const totalAmount = cartItems.reduce((total, item) => {
-    if (item.itemType === "product") {
-      return total + 200 + item.totalAmount * item.quantity;
-    } else {
-      return total + 100 + item.totalAmount * item.quantity;
-    }
-  }, 0);
+  const totalAmount = FetchTotalAmount();
 
   return (
     <div className="cart-page">
@@ -110,7 +98,9 @@ const Cart = () => {
               <h2>Total</h2>
               <h2>{totalAmount.toFixed(2)}</h2>
             </div>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <a className="checkout-btn" href="/checkout">
+              Proceed to Checkout
+            </a>
           </div>
         </div>
       </div>

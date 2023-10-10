@@ -37,11 +37,19 @@ const ItemCard = ({
     totalAmount: totalAmount,
   });
 
+  const [isAdded, setIsAdded] = useState(false);
+
   const handleAddToCart = async () => {
     try {
       const response = await axios.post("/api/cart/add", itemToAdd);
 
       console.log("Item added to cart:", response.data);
+
+      setIsAdded(true);
+
+      setTimeout(() => {
+        setIsAdded(false);
+      }, 2000);
 
       setItemToAdd({
         ...itemToAdd,
@@ -67,8 +75,11 @@ const ItemCard = ({
         </div>
 
         <p className="product-price">₹{price}</p>
-        <button className="cart-btn" onClick={handleAddToCart}>
-          Add to cart
+        <button
+          className={`cart-btn ${isAdded ? "added" : ""}`}
+          onClick={handleAddToCart}
+        >
+          {isAdded ? "Added to Cart" : "Add to Cart"}
         </button>
       </div>
     </div>
