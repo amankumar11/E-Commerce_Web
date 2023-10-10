@@ -20,14 +20,12 @@ const Signup = () => {
         <div className="login-left">
           <h1>Welcome</h1>
           <form className="login-form" onSubmit={handleSubmit}>
-            {/* <label>Email address:</label> */}
             <input
               type="email"
               placeholder="Email Id"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            {/* <label>Password:</label> */}
             <input
               type="password"
               placeholder="Password"

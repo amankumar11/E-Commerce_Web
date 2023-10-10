@@ -106,7 +106,6 @@ const Cart = () => {
                 quantity={item.quantity}
               />
             ))}
-            {/* <ItemAmountCard /> */}
             <div className="total-box">
               <h2>Total</h2>
               <h2>{totalAmount.toFixed(2)}</h2>

@@ -21,14 +21,12 @@ const Login = () => {
           <h1>Welcome</h1>
           <p>We are glad to see you back with us</p>
           <form className="login-form" onSubmit={handleSubmit}>
-            {/* <label>Email address:</label> */}
             <input
               type="email"
               placeholder="Email Id"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            {/* <label>Password:</label> */}
             <input
               type="password"
               placeholder="Password"

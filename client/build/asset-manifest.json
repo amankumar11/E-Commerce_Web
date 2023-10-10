@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.61e6a765.css",
+    "main.js": "/static/js/main.1aa8c4f6.js",
+    "static/js/787.668ef254.chunk.js": "/static/js/787.668ef254.chunk.js",
+    "static/media/login.jpg": "/static/media/login.896cf4ec8c971dac8727.jpg",
+    "static/media/landing_banner.webp": "/static/media/landing_banner.7908dc31d5d661f39d1b.webp",
+    "static/media/plotline_logo.svg": "/static/media/plotline_logo.87fae651ee7d1eec6284413f98ff1654.svg",
+    "index.html": "/index.html",
+    "main.61e6a765.css.map": "/static/css/main.61e6a765.css.map",
+    "main.1aa8c4f6.js.map": "/static/js/main.1aa8c4f6.js.map",
+    "787.668ef254.chunk.js.map": "/static/js/787.668ef254.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61e6a765.css",
+    "static/js/main.1aa8c4f6.js"
+  ]
+}
