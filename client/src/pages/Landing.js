@@ -30,9 +30,9 @@ const Landing = () => {
             itemType={item.itemType}
             taxes={item.taxes}
             totalAmount={item.totalAmount}
-            height="520px"
-            width="450px"
-            imgHeight="400px"
+            height="480px"
+            width="400px"
+            imgHeight="350px"
           />
         ))}
       </div>

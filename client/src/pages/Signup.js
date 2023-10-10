@@ -19,6 +19,7 @@ const Signup = () => {
       <div className="login-card">
         <div className="login-left">
           <h1>Welcome</h1>
+          <p className="signup-p">Start shopping!</p>
           <form className="login-form" onSubmit={handleSubmit}>
             <input
               type="email"

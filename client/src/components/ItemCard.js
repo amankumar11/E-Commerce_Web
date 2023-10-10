@@ -14,12 +14,12 @@ const ItemCard = ({
   totalAmount,
 }) => {
   const cardStyle = {
-    height: height || "550px",
-    width: width || "350px",
+    height: height || "500px",
+    width: width || "300px",
   };
 
   const imgStyle = {
-    height: imgHeight || "320px",
+    height: imgHeight || "280px",
   };
 
   const userData = localStorage.getItem("user");
