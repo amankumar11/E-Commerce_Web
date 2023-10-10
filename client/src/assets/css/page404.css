@@ -1,0 +1,33 @@
+.page404 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.page404 h1 {
+  font-size: 200px;
+  color: var(--product-red);
+  margin: 0;
+}
+
+.page404 p {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.677);
+}
+
+.page404 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: var(--product-red);
+  color: white;
+  height: 50px;
+  text-decoration: none;
+  width: 150px;
+}

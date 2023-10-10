@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Admin from "./admin/AdminPage";
+import Page404 from "./pages/Page404";
 
 function App() {
   const { user } = useAuthContext();
@@ -39,6 +40,7 @@ function App() {
             {userEmail === "admin@gmail.com" && (
               <Route path="/admin" element={<Admin />} />
             )}
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </div>
       </BrowserRouter>

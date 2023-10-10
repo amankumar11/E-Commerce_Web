@@ -1,0 +1,24 @@
+.admin-heading {
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-item-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-add-form {
+  background-color: rgba(0, 0, 0, 0.253);
+  padding: 40px 40px;
+  width: 500px;
+  border-radius: 25px;
+}
+
+.item-btn {
+  background-color: var(--product-red);
+}
